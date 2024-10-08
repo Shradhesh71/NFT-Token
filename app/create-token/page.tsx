@@ -175,9 +175,9 @@ export default function CreateToken() {
           method: "POST",
           data: formData,
           headers: {
-            pinata_api_key: process.env.NEXT_PUBLIC_PINATA_API_KEY,
+            pinata_api_key: process.env.PINATA_API_KEY,
             pinata_secret_api_key:
-              process.env.NEXT_PUBLIC_PINATA_SECRET_API_KEY,
+              process.env.PINATA_SECRET_API_KEY,
             "Content-Type": "multipart/form-data",
           },
         });
@@ -214,8 +214,8 @@ export default function CreateToken() {
         method: "POST",
         data: data,
         headers: {
-          pinata_api_key: process.env.NEXT_PUBLIC_PINATA_API_KEY,
-          pinata_secret_api_key: process.env.NEXT_PUBLIC_PINATA_SECRET_API_KEY,
+          pinata_api_key: process.env.PINATA_API_KEY,
+          pinata_secret_api_key: process.env.PINATA_SECRET_API_KEY,
           "Content-Type": "application/json",
         },
       });
