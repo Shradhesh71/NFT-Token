@@ -175,11 +175,9 @@ export default function CreateToken() {
           method: "POST",
           data: formData,
           headers: {
-            pinata_api_key:
-              process.env.NEXT_PUBLIC_PINATA_API_KEY || "c32331de3ecc0a693335",
+            pinata_api_key: process.env.NEXT_PUBLIC_PINATA_API_KEY,
             pinata_secret_api_key:
-              process.env.NEXT_PUBLIC_PINATA_SECRET_API_KEY ||
-              "6ebc4c176da6cc6714c877ed8886f75e3c0498476c58fbdf082380f5820db5ed",
+              process.env.NEXT_PUBLIC_PINATA_SECRET_API_KEY,
             "Content-Type": "multipart/form-data",
           },
         });
@@ -216,11 +214,8 @@ export default function CreateToken() {
         method: "POST",
         data: data,
         headers: {
-          pinata_api_key:
-            process.env.NEXT_PUBLIC_PINATA_API_KEY || "c32331de3ecc0a693335",
-          pinata_secret_api_key:
-            process.env.NEXT_PUBLIC_PINATA_SECRET_API_KEY ||
-            "6ebc4c176da6cc6714c877ed8886f75e3c0498476c58fbdf082380f5820db5ed",
+          pinata_api_key: process.env.NEXT_PUBLIC_PINATA_API_KEY,
+          pinata_secret_api_key: process.env.NEXT_PUBLIC_PINATA_SECRET_API_KEY,
           "Content-Type": "application/json",
         },
       });
@@ -406,22 +401,22 @@ export default function CreateToken() {
                         </a>
                       </div>
                       <div className="">
-                    <div className=" text-center">
-                      <ul className="flex flex-wrap items-center justify-center gap-2">
-                        {" "}
-                        <li>
-                          <a
-                            href="/"
-                            className=" group inline-flex h-10 w-10 items-center justify-center rounded-lg bg-white/20 backdrop-blur-2xl transition-all hover:bg-blue-600/6 "
-                          >
-                            <i className="text-2xl text-white group-hover:text-white">
-                              <AiOutlineClose />{" "}
-                            </i>
-                          </a>
-                        </li>{" "}
-                      </ul>
-                    </div>
-                  </div>
+                        <div className=" text-center">
+                          <ul className="flex flex-wrap items-center justify-center gap-2">
+                            {" "}
+                            <li>
+                              <a
+                                href="/"
+                                className=" group inline-flex h-10 w-10 items-center justify-center rounded-lg bg-white/20 backdrop-blur-2xl transition-all hover:bg-blue-600/6 "
+                              >
+                                <i className="text-2xl text-white group-hover:text-white">
+                                  <AiOutlineClose />{" "}
+                                </i>
+                              </a>
+                            </li>{" "}
+                          </ul>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

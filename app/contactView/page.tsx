@@ -7,8 +7,10 @@ import { AiOutlineClose } from "react-icons/ai";
 import "./globals.css";
 import Footer from "@/components/Footer";
 
+const key = process.env.FROMFREE!;
+
 export default function ContactView() {
-  const [state, handleSubmit] = useForm("xpwzaoql");
+  const [state, handleSubmit] = useForm(key);
   if (state.succeeded) {
     console.log({
       type: "success",
@@ -114,7 +116,7 @@ export default function ContactView() {
           </div>
         </div>
       </section>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
