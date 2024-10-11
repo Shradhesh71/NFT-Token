@@ -13,8 +13,9 @@ import {
 } from "@solana/web3.js";
 import { useCallback, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
-import "./globals.css";
+import "../../styles/globals.css";
 import InputView from "@/components/inputView";
+import Footer from "@/components/Footer";
 
 export default function Donate() {
   const wallet = useWallet();
@@ -144,6 +145,7 @@ export default function Donate() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

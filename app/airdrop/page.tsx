@@ -7,7 +7,8 @@ import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 import { LAMPORTS_PER_SOL, TransactionSignature } from "@solana/web3.js";
 import { useCallback } from "react";
 import { AiOutlineClose } from "react-icons/ai";
-import "./globals.css";
+import "../../styles/globals.css";
+import Footer from "@/components/Footer";
 
 export default function Airdrop() {
   const wallet = useWallet();
@@ -121,6 +122,7 @@ export default function Airdrop() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

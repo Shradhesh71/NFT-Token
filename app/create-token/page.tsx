@@ -19,7 +19,6 @@ import {
 } from "@solana/spl-token";
 import {
   PROGRAM_ID,
-  createCreateMetadataAccountInstruction,
   createCreateMetadataAccountV3Instruction,
 } from "@metaplex-foundation/mpl-token-metadata";
 import axios from "axios";
@@ -27,9 +26,10 @@ import { ClipLoader } from "react-spinners";
 import { AiOutlineClose } from "react-icons/ai";
 import { useCallback, useState } from "react";
 import CreateSVG from "@/components/svg/CreateSVG";
-import "./globals.css";
+import "../../styles/globals.css";
 import InputView from "@/components/inputView";
 import Branding from "@/components/Branding";
+import Footer from "@/components/Footer";
 
 export default function CreateToken() {
   const { connection } = useConnection();
@@ -176,8 +176,7 @@ export default function CreateToken() {
           data: formData,
           headers: {
             pinata_api_key: process.env.PINATA_API_KEY,
-            pinata_secret_api_key:
-              process.env.PINATA_SECRET_API_KEY,
+            pinata_secret_api_key: process.env.PINATA_SECRET_API_KEY,
             "Content-Type": "multipart/form-data",
           },
         });
@@ -425,6 +424,7 @@ export default function CreateToken() {
           </div>
         </section>
       )}
+      <Footer />
     </div>
   );
 }

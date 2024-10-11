@@ -1,17 +1,16 @@
 import Link from "next/link";
 import {
-  FaFacebook,
   FaInstagram,
   FaTwitter,
-  FaPinterest,
-  FaSnapchatGhost,
   FaLinkedin,
+  FaMediumM,
+  FaReddit,
 } from "react-icons/fa";
 
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white py-10">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
         <div>
           <h3 className="text-lg font-bold mb-4">CUSTOMER SERVICE</h3>
           <ul>
@@ -33,7 +32,7 @@ export default function Footer() {
             <p>Cash on delivery*</p>
           </div> */}
         </div>
-        <div>
+        {/* <div>
           <h3 className="text-lg font-bold mb-4">COMPANY</h3>
           <ul>
             <li>
@@ -52,12 +51,12 @@ export default function Footer() {
               <Link href="/blog">Blog</Link>
             </li>
           </ul>
-        </div>
+        </div> */}
         <div>
           <h3 className="text-lg font-bold mb-4">CONNECT WITH US</h3>
-          <div className="flex space-x-4">
-            <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
-              <FaFacebook size={24} />
+          <div className="flex space-x-4 ml-28">
+            <a href="https://www.reddit.com" target="_blank" rel="noreferrer">
+              <FaReddit size={24} />
             </a>
             <a
               href="https://www.instagram.com"
@@ -66,18 +65,18 @@ export default function Footer() {
             >
               <FaInstagram size={24} />
             </a>
-            <a href="https://www.twitter.com" target="_blank" rel="noreferrer">
+            <a href="https://x.com/Shradeshjain835" target="_blank" rel="noreferrer">
               <FaTwitter size={24} />
             </a>
             <a
-              href="https://www.pinterest.com"
+              href="https://www.linkedin.com/in/shradesh-jodawat-147730265/"
               target="_blank"
               rel="noreferrer"
             >
                 <FaLinkedin size={24} />
             </a>
-            <a href="https://www.snapchat.com" target="_blank" rel="noreferrer">
-              <FaSnapchatGhost size={24} />
+            <a href="https://www.medium.com" target="_blank" rel="noreferrer">
+              <FaMediumM size={24} />
             </a>
           </div>
         </div>
@@ -103,16 +102,16 @@ export default function Footer() {
           <h3 className="text-lg font-bold mb-4">Other Useful Website</h3>
           <ul>
             <li>
-              <Link href="/stores/bandra">Portfolio</Link>
+              <Link href="https://shradesh-jodawat.vercel.app/">Portfolio</Link>
             </li>
             <li>
-              <Link href="/stores/thane">Lottery</Link>
+              <Link href="/https://raffle-solana.vercel.app/">Lottery</Link>
             </li>
             <li>
-              <Link href="/stores/colaba">Pixbounty</Link>
+              <Link href="https://github.com/Shradhesh71/PixBounty">Pixbounty</Link>
             </li>
             <li>
-              <Link href="/stores/palladium">GameXplore</Link>
+              <Link href="https://github.com/Shradhesh71/Game_Xplore/tree/master">GameXplore</Link>
             </li>
           </ul>
         </div>

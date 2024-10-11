@@ -13,7 +13,7 @@ export default function Home() {
   ];
 
   return (
-    <div className=" justify-center text-center bg-black/80">
+    <div className=" justify-center text-center bg-black/20">
       <Navbar />
       <button
         type="button"

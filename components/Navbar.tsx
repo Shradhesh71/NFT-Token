@@ -12,7 +12,7 @@ export default function Navbar() {
         <Image src="/image.png" height={30} width={200} alt="Solana Logo" />
       </Link>
       <Link href={"/"}>
-        <span>Token Program</span>
+        <span>SolanaCraft</span>
       </Link>
       <WalletMultiButton />
     </div>

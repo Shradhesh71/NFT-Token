@@ -4,7 +4,7 @@ import Branding from "@/components/Branding";
 import Navbar from "@/components/Navbar";
 import { useForm, ValidationError } from "@formspree/react";
 import { AiOutlineClose } from "react-icons/ai";
-import "./globals.css";
+import "../../styles/globals.css";
 import Footer from "@/components/Footer";
 
 const key = process.env.FROMFREE!;

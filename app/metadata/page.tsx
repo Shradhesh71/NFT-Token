@@ -9,7 +9,8 @@ import { ClipLoader } from "react-spinners";
 import InputView from "@/components/inputView";
 import Navbar from "@/components/Navbar";
 import Branding from "@/components/Branding";
-import "./globals.css";
+import "../../styles/globals.css";
+import Footer from "@/components/Footer";
 
 export default function TokenMetadata() {
   const { connection } = useConnection();
@@ -200,6 +201,7 @@ export default function TokenMetadata() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }
