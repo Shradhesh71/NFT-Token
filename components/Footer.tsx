@@ -1,3 +1,6 @@
+"use client";
+
+import { useForm, ValidationError } from "@formspree/react";
 import Link from "next/link";
 import {
   FaInstagram,
@@ -8,6 +11,14 @@ import {
 } from "react-icons/fa";
 
 export default function Footer() {
+  const [state, handleSubmit] = useForm("xpwzaoql");
+  if (state.succeeded) {
+    console.log({
+      type: "success",
+      message: "Successfully subcription",
+    });
+  }
+
   return (
     <footer className="bg-gray-900 text-white py-10">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -65,7 +76,11 @@ export default function Footer() {
             >
               <FaInstagram size={24} />
             </a>
-            <a href="https://x.com/Shradeshjain835" target="_blank" rel="noreferrer">
+            <a
+              href="https://x.com/Shradeshjain835"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaTwitter size={24} />
             </a>
             <a
@@ -73,7 +88,7 @@ export default function Footer() {
               target="_blank"
               rel="noreferrer"
             >
-                <FaLinkedin size={24} />
+              <FaLinkedin size={24} />
             </a>
             <a href="https://www.medium.com" target="_blank" rel="noreferrer">
               <FaMediumM size={24} />
@@ -82,14 +97,21 @@ export default function Footer() {
         </div>
         <div>
           <h3 className="text-lg font-bold mb-4">KEEP UP TO DATE</h3>
-          <form>
+          <form onSubmit={handleSubmit}>
             <input
               type="email"
+              name="email"
               placeholder="Enter Email ID"
               className="p-2 w-full mb-4 text-black"
             />
+            <ValidationError
+              prefix="Email"
+              field="email"
+              errors={state.errors}
+            />
             <button
               type="submit"
+              disabled={state.submitting}
               className="bg-yellow-500 text-black py-2 px-4 w-full"
             >
               SUBSCRIBE
@@ -108,10 +130,14 @@ export default function Footer() {
               <Link href="/https://raffle-solana.vercel.app/">Lottery</Link>
             </li>
             <li>
-              <Link href="https://github.com/Shradhesh71/PixBounty">Pixbounty</Link>
+              <Link href="https://github.com/Shradhesh71/PixBounty">
+                Pixbounty
+              </Link>
             </li>
             <li>
-              <Link href="https://github.com/Shradhesh71/Game_Xplore/tree/master">GameXplore</Link>
+              <Link href="https://github.com/Shradhesh71/Game_Xplore/tree/master">
+                GameXplore
+              </Link>
             </li>
           </ul>
         </div>
@@ -119,7 +145,9 @@ export default function Footer() {
           <h3 className="text-lg font-bold mb-4">USEFUL LINKS</h3>
           <ul>
             <li>
-              <Link href="https://solana.com/developers/nfts" target="_blank">NFT Solana</Link>
+              <Link href="https://solana.com/developers/nfts" target="_blank">
+                NFT Solana
+              </Link>
             </li>
             <li>
               <Link href="https://opensea.io/">OpenSea</Link>
@@ -170,7 +198,9 @@ export default function Footer() {
         </div> */}
       </div>
       <div className="container mx-auto text-center mt-8">
-        <p className="text-gray-500">© 2024 Shradhesh Jodawat. All rights reserved.</p>
+        <p className="text-gray-500">
+          © 2024 Shradhesh Jodawat. All rights reserved.
+        </p>
         <div className="mt-4 flex justify-center space-x-4">
           <p>100% Decentralized</p>
           <p>Premium Features</p>

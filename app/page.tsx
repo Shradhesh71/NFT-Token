@@ -17,7 +17,7 @@ export default function Home() {
       <Navbar />
       <button
         type="button"
-        className="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-7 py-3.5 text-center me-2 mb-2 mt-10"
+        className=" cursor-not-allowed text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-7 py-3.5 text-center me-2 mb-2 mt-10"
       >
         <BalanceDisplay />
       </button>
