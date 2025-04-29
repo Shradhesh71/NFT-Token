@@ -40,7 +40,7 @@ export default function CreateToken() {
 
   const [token, setToken] = useState({
     name: "",
-    symlink: "",
+    symbol: "",
     decimals: "",
     amount: "",
     image: "",
@@ -91,7 +91,13 @@ export default function CreateToken() {
                   name: token.name,
                   symbol: token.symbol,
                   uri: metadatUrl!,
-                  creators: null,
+                  creators: [
+                    {
+                      address: publicKey!,
+                      verified: true,
+                      share: 100,
+                    },
+                  ],
                   sellerFeeBasisPoints: 0,
                   uses: null,
                   collection: null,
@@ -101,6 +107,7 @@ export default function CreateToken() {
               },
             }
           );
+        console.log("createMetadataInstruction done.");
 
         const createNewTokenTransaction = new Transaction().add(
           SystemProgram.createAccount({
@@ -132,12 +139,14 @@ export default function CreateToken() {
           ),
           createMetadataInstruction
         );
+        console.log("createNewTokenTransaction done.");
 
         const signature = await sendTransaction(
           createNewTokenTransaction,
           connection,
           { signers: [mintKeypair] }
         );
+        console.log("sendTransaction done: ", signature);
 
         setTokenMintAddress(mintKeypair.publicKey.toString());
         console.log({
@@ -146,7 +155,7 @@ export default function CreateToken() {
           txid: signature,
         });
       } catch (error: any) {
-        console.log(error);
+        console.log("error: ", error);
       }
       setIsLoading(false);
     },
@@ -175,8 +184,9 @@ export default function CreateToken() {
           method: "POST",
           data: formData,
           headers: {
-            pinata_api_key: process.env.PINATA_API_KEY,
-            pinata_secret_api_key: process.env.PINATA_SECRET_API_KEY,
+            pinata_api_key: "e6b6bf38f21110dfa9fe",
+            pinata_secret_api_key:
+              "61ad207a2a55b4408b9ef77399a07386e61a355a6519d4f36cbc2bb49af5800f",
             "Content-Type": "multipart/form-data",
           },
         });
@@ -196,6 +206,8 @@ export default function CreateToken() {
     setIsLoading(true);
     const { name, symbol, image, description } = token;
 
+    console.log(token);
+
     if (!name || !symbol || !image || !description) {
       return console.log("Please fill all fields");
     }
@@ -213,8 +225,9 @@ export default function CreateToken() {
         method: "POST",
         data: data,
         headers: {
-          pinata_api_key: process.env.PINATA_API_KEY,
-          pinata_secret_api_key: process.env.PINATA_SECRET_API_KEY,
+          pinata_api_key: "e6b6bf38f21110dfa9fe",
+          pinata_secret_api_key:
+            "61ad207a2a55b4408b9ef77399a07386e61a355a6519d4f36cbc2bb49af5800f",
           "Content-Type": "application/json",
         },
       });

@@ -1,7 +1,5 @@
-// components/Card.js
-
 import Link from "next/link";
-import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 
 interface CardProps {
   imageSrc: string;
@@ -10,34 +8,28 @@ interface CardProps {
   link: string;
 }
 
-export default function Card({
-  imageSrc,
-  title,
-  description,
-  link,
-}: CardProps) {
+const Card: React.FC<CardProps> = ({ imageSrc, title, description, link }) => {
   return (
-    <Link href={link}>
-      <div className="p-4 rounded-2xl shadow-2xl transform transition duration-300 ease-in-out hover:shadow-xl hover:scale-105 bg-gradient-to-bl from-blue-200 to-purple-300 hover:bg-gradient-to-r hover:from-blue-400 hover:to-purple-400 hover:text-white cursor-pointer group">
-        <div className="overflow-hidden rounded-lg">
-          <Image
-            height={30}
-            width={200}
-            src={imageSrc}
-            alt={title}
-            className="w-full bg-black h-48 object-cover transition duration-300 transform group-hover:scale-110 rounded-md"
-          />
-        </div>
-        <h2 className="text-xl text-white bg-gradient-to-br from-sky-500 to-red-400 hover:bg-gradient-to-bl font-semibold mt-4 transition duration-300 group-hover:text-white p-2 rounded-3xl">
-          {title}
-        </h2>
-        <p className="text-gray-900 mt-2 transition duration-300 group-hover:text-gray-700">
-          {description}
-        </p>
-        <div className="mt-4 inline-block px-4 py-2 text-sm font-semibold text-blue-500 bg-white border border-blue-500 rounded-lg transition duration-300 ease-in-out transform group-hover:bg-blue-600 group-hover:text-white group-hover:scale-105">
-          Learn More
-        </div>
+    <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl shadow-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl group">
+      <div className="h-48 overflow-hidden">
+        <img
+          src={imageSrc}
+          alt={title}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        />
       </div>
-    </Link>
+      <div className="p-6">
+        <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
+        <p className="text-gray-300 mb-4">{description}</p>
+        <Link
+          href={link}
+          className="inline-flex items-center py-2 px-4 bg-gradient-to-r from-pink-500 to-orange-400 text-white rounded-lg font-medium transition-transform hover:translate-y-1 hover:shadow-lg"
+        >
+          Explore <ArrowUpRight size={16} className="ml-2" />
+        </Link>
+      </div>
+    </div>
   );
-}
+};
+
+export default Card;
